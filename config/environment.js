@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'eeveelution-quiz',
+    podModulePrefix: 'eeveelution-quiz/pods',
     environment,
     rootURL: '/',
     locationType: 'auto',
