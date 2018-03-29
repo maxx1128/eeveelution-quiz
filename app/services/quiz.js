@@ -1,12 +1,57 @@
 import Service from '@ember/service';
-import { computed } from '@ember/object';
+import { computed, set } from '@ember/object';
 
 export default Service.extend({
   name: "This is the Eevee quiz!",
 
   length: computed('questions', function(){
-    return this.get('questions').length;
+    return (this.get('questions').length);
   }),
+
+  results: computed('answers', function(){
+    const answers = this.get('answers');
+    let results = {};
+
+    for (var key in answers) {
+      const answer = answers[key];
+
+      results[answer] ? results[answer]++ : results[answer] = 1;
+    }
+
+    return results;
+  }),
+
+  winner: computed('results', function(){
+    const results = this.get('results');
+    let winner = {
+      'name': '',
+      'count': 0
+    };
+
+    for (var key in results) {
+      if (results[key] > winner['count']) {
+        winner['name'] = key;
+        winner['count'] = results[key];
+      }
+    }
+
+    return winner['name'];
+  }),
+
+  selectAnswer: function(index, answer) {
+    const i = parseInt(index),
+          question = this.get('questions').objectAt(i),
+          next_question = this.get('questions').objectAt((i + 1)),
+          answers = this.get('answers');
+
+    set(question, 'answer', answer);
+    set(next_question, 'answer', false);
+    set(answers, i, answer);
+
+    this.notifyPropertyChange('results');
+  },
+
+  answers: {},
 
   questions: [
     {

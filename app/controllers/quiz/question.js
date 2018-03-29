@@ -8,16 +8,34 @@ import { computed } from '@ember/object';
 export default Controller.extend({
   quiz: service(),
 
-  quiz_length: Ember.computed.alias('quiz.length'),
-
-  all_questions: Ember.computed('quiz_length', function(){
-    const limit = this.get('quiz_length');
+  all_questions: computed('model', 'quiz.length', function(){
+    const limit = this.get('quiz.length'),
+          current_index = this.get('model.index');
     let questions_array = [];
 
     for (var i = 1; i < limit; i++) {
-      questions_array.push(i);
+      const question = this.get('quiz.questions').objectAt(i),
+            answer = question.answer,
+            available = (answer || answer === false || current_index >= i);
+
+      const data = {
+        index: i,
+        available: available
+      }
+
+      questions_array.push(data);
     }
 
     return questions_array;
-  })
+  }),
+
+  actions: {
+    selectAnswer(index, answer) {
+      const i = parseInt(index);
+
+      this.get('quiz').selectAnswer(i, answer);
+      this.transitionToRoute('quiz.question', (i + 1));
+      this.notifyPropertyChange('all_questions');
+    }
+  }
 });

@@ -1,10 +1,12 @@
-<p>
-  There are {{quiz_length}} questions!
-</p>
+{{quiz.winner}}
 
 <p>
-  {{#each all_questions as |question_number|}}
-    {{link-to question_number 'quiz.question' question_number activeClass="font-bold"}}
+  {{#each all_questions as |question|}}
+    {{#if question.available}}
+      {{link-to question.index 'quiz.question' question.index activeClass="font-bold"}}
+    {{else}}
+      {{question.index}}
+    {{/if}}
   {{/each}}
 </p>
 
@@ -18,8 +20,8 @@
 
 <ul>
   {{#each model.answers as |answer|}}
-    <li>
-      {{answer.text}}
+    <li {{action 'selectAnswer' model.index answer.value}}>
+      {{answer.text}} ({{answer.value}})
     </li>
   {{/each}}
 </ul>
