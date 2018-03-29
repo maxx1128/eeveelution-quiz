@@ -1,667 +1,696 @@
 import Service from '@ember/service';
+import { computed } from '@ember/object';
 
 export default Service.extend({
   name: "This is the Eevee quiz!",
 
+  length: computed('questions', function(){
+    return this.get('questions').length;
+  }),
+
   questions: [
     {
       'text': 'What\'s your favorite type of weather?',
+      'answer': null,
       'answers':[
         {
           'text': 'Sunny and breezy',
-          'index': 6
+          'value': 'leafeon'
         },{
           'text': 'Cool and drizzly',
-          'index': 7
+          'value': 'glaceon'
         },{
           'text': 'Anything not extreme',
-          'index': 0
+          'value': 'eevee'
         }, {
           'text': 'Rainy',
-          'index': 1
+          'value': 'vaporeon'
         }, {
           'text': 'Lots of sunshine!',
-          'index': 3
+          'value': 'flareon'
         }, {
           'text': 'Sunrise',
-          'index': 8
+          'value': 'sylveon'
         }, {
           'text': 'Distant thunder',
-          'index': 2
+          'value': 'jolteon'
         }, {
           'text': 'Anytime with sun',
-          'index': 4
+          'value': 'espeon'
         }, {
           'text': 'Anything at night',
-          'index': 5
+          'value': 'umbreon'
         }
       ]
     }, {
       'text': 'How would you describe yourself in one word?',
+      'answer': null,
       'answers':[
         {
           'text': 'Cheerful',
-          'index': 8
+          'value': 'sylveon'
         },{
           'text': 'Secretive',
-          'index': 5
+          'value': 'umbreon'
         }, {
           'text': 'Flexible',
-          'index': 1
+          'value': 'vaporeon'
         }, {
           'text': 'Intelligent',
-          'index': 4
+          'value': 'espeon'
         }, {
           'text': 'Energetic',
-          'index': 2
+          'value': 'jolteon'
         }, {
           'text': 'Down to Earth',
-          'index': 0
+          'value': 'eevee'
         }, {
           'text': 'Free Spirited',
-          'index': 3
+          'value': 'flareon'
         }, {
           'text': 'Outdoorsy',
-          'index': 6
+          'value': 'leafeon'
         }, {
           'text': 'Independent',
-          'index': 7
+          'value': 'glaceon'
         }
       ]
     }, {
       'text': 'Of these choices, what\'s your favorite food or snack?',
+      'answer': null,
       'answers':[
         {
           'text': 'Ice Cream',
-          'index': 7
+          'value': 'glaceon'
         },{
           'text': 'Watermelon',
-          'index': 1
+          'value': 'vaporeon'
         }, {
           'text': 'Fruits and vegetables',
-          'index': 6
+          'value': 'leafeon'
         }, {
           'text': 'Candy',
-          'index': 3
+          'value': 'flareon'
         }, {
           'text': 'Energy drinks',
-          'index': 2
+          'value': 'jolteon'
         }, {
           'text': 'Anything, really',
-          'index': 0
+          'value': 'eevee'
         }, {
           'text': 'Something sour',
-          'index': 5
+          'value': 'umbreon'
         }, {
           'text': 'An apple',
-          'index': 4
+          'value': 'espeon'
         }
       ]
     }, {
       'text': 'Which is your favorite way to exercise?',
+      'answer': null,
       'answers':[
         {
           'text': 'Jogging outside',
-          'index': 6
+          'value': 'leafeon'
         },{
           'text': 'Short sprints',
-          'index': 2
+          'value': 'jolteon'
         }, {
           'text': 'Yoga and meditation',
-          'index': 4
+          'value': 'espeon'
         }, {
           'text': 'Swimming',
-          'index': 1
+          'value': 'vaporeon'
         }, {
           'text': 'Dancing',
-          'index': 3
+          'value': 'flareon'
         }, {
           'text': 'Anything with friends',
-          'index': 8
+          'value': 'sylveon'
         }
       ]
     }, {
       'text': 'A stranger approaches you and stands by your side, looking at you. What\'s your reaction?',
+      'answer': null,
       'answers':[
         {
           'text': 'Ask if they need anything',
-          'index': 0
+          'value': 'eevee'
         }, {
           'text': 'Talk to them about whatever is on your mind',
-          'index': 1
+          'value': 'vaporeon'
         }, {
           'text': 'Glare at them before slowly walking away',
-          'index': 7
+          'value': 'glaceon'
         }, {
           'text': 'Welcome them as a new friend and chat with them',
-          'index': 8
+          'value': 'sylveon'
         }, {
           'text': 'Make an observation about them to break the ice',
-          'index': 6
+          'value': 'leafeon'
         }, {
           'text': 'Completely ignore them and walk away',
-          'index': 5
+          'value': 'umbreon'
         }, {
           'text': 'Wonder why they\'re doing this in the first place',
-          'index': 4
+          'value': 'espeon'
         }
       ]
     }, {
       'text': 'If you were fighting an enemy, what would your strategy be?',
+      'answer': null,
       'answers':[
         {
           'text': 'Hit them before they hit you',
-          'index': 2
+          'value': 'jolteon'
         }, {
           'text': 'Overwhelm them with pure, focused force',
-          'index': 6
+          'value': 'leafeon'
         }, {
           'text': 'Wear them down until they\'re too tired to fight back',
-          'index': 5
+          'value': 'umbreon'
         }, {
           'text': 'Try to balance offense and defense',
-          'index': 0
+          'value': 'eevee'
         }, {
           'text': 'Trick them into letting down their guard, then strike',
-          'index': 8
+          'value': 'sylveon'
         }, {
           'text': 'Lure them into an environment where you have an advantage',
-          'index': 1
+          'value': 'vaporeon'
         }, {
           'text': 'Watch for their biggest weak point and find a way to exploit it',
-          'index': 4
+          'value': 'espeon'
         }, {
           'text': 'Go all out and hope enough attacks land',
-          'index': 3
+          'value': 'flareon'
         }
       ]
     }, {
       'text': 'Are you easily excitable?',
+      'answer': null,
       'answers':[
         {
           'text': 'Not at all, I\'m very quiet and reserved',
-          'index': 5
+          'value': 'umbreon'
         }, {
           'text': 'No, I\'m usually pretty calm',
-          'index': 7
+          'value': 'glaceon'
         }, {
           'text': 'Maybe. I get as excited as the next person',
-          'index': 0
+          'value': 'eevee'
         }, {
           'text': 'Yes, it isn\'t hard to get me jumping for something',
-          'index': 8
+          'value': 'sylveon'
         }, {
           'text': 'Very, I\'m already excited for most of the day!',
-          'index': 2
+          'value': 'jolteon'
         }
       ]
     }, {
-      'text': 'What\s your favorite movie genre?',
+      'text': 'What\'s your favorite movie genre?',
+      'answer': null,
       'answers':[
         {
           'text': 'Romantic Comedy',
-          'index': 8
+          'value': 'sylveon'
         }, {
           'text': 'Thriller',
-          'index': 3
+          'value': 'flareon'
         }, {
           'text': 'Mystery/Suspense',
-          'index': 7
+          'value': 'glaceon'
         }, {
           'text': 'Family Friendly',
-          'index': 0
+          'value': 'eevee'
         }, {
           'text': 'Documentary',
-          'index': 4
+          'value': 'espeon'
         }, {
           'text': 'Anything fast-paced',
-          'index': 2
+          'value': 'jolteon'
         }, {
           'text': 'Horror',
-          'index': 5
+          'value': 'umbreon'
         }
       ]
     }, {
       'text': 'You\'re favorite accessory or piece of clothing on this list?',
+      'answer': null,
       'answers':[
         {
           'text': 'Coat or jacket',
-          'index': 7
+          'value': 'glaceon'
         }, {
           'text': 'Scarf',
-          'index': 3
+          'value': 'flareon'
         }, {
           'text': 'Swimsuit',
-          'index': 1
+          'value': 'vaporeon'
         }, {
           'text': 'Necklace',
-          'index': 4
+          'value': 'espeon'
         }, {
           'text': 'Bow or bowtie',
-          'index': 8
+          'value': 'sylveon'
         }, {
           'text': 'Sunglasses',
-          'index': 5
+          'value': 'umbreon'
         }, {
           'text': 'Boots or gloves',
-          'index': 6
+          'value': 'leafeon'
         }
       ]
     }, {
       'text': 'What would your ideal vacation be?',
+      'answer': null,
       'answers':[
         {
           'text': 'Somewhere with lots of parties',
-          'index': 2
+          'value': 'jolteon'
         }, {
           'text': 'Going camping or hiking',
-          'index': 6
+          'value': 'leafeon'
         }, {
           'text': 'A winter wonderland or resort',
-          'index': 7
+          'value': 'glaceon'
         }, {
           'text': 'A house by a lake',
-          'index': 1
+          'value': 'vaporeon'
         }, {
           'text': 'The beach or a resort',
-          'index': 3
+          'value': 'flareon'
         }, {
           'text': 'Depends on the season',
-          'index': 0
+          'value': 'eevee'
         }, {
           'text': 'An amusement park',
-          'index': 8
+          'value': 'sylveon'
         }, {
           'text': 'Somewhere I can read in peace',
-          'index': 4
+          'value': 'espeon'
         }, {
           'text': 'An island without many people',
-          'index': 5
+          'value': 'umbreon'
         }
       ]
     }, {
       'text': 'What would your biggest dealbreaker be in a romantic partner?',
+      'answer': null,
       'answers':[
         {
           'text': 'They\'re too much of a morning person',
-          'index': 5
+          'value': 'umbreon'
         }, {
           'text': 'They\'re not outgoing enough',
-          'index': 2
+          'value': 'jolteon'
         }, {
           'text': 'They\'re too "out there" for me',
-          'index': 0
+          'value': 'eevee'
         }, {
           'text': 'They don\'t intellectually challenge me',
-          'index': 4
+          'value': 'espeon'
         }, {
           'text': 'They\'re too pessimistic',
-          'index': 8
+          'value': 'sylveon'
         }, {
           'text': 'They\'re in their house too much',
-          'index': 6
+          'value': 'leafeon'
         }, {
           'text': 'They\'re not exciting',
-          'index': 3
+          'value': 'flareon'
         }, {
           'text': 'They dwell too much on things',
-          'index': 1
+          'value': 'vaporeon'
         }, {
           'text': 'They\'re too clingy',
-          'index': 7
+          'value': 'glaceon'
         }
       ]
     }, {
       'text': 'Which of these holidays is your favorite?',
+      'answer': null,
       'answers':[
         {
           'text': 'Christmas',
-          'index': 7
+          'value': 'glaceon'
         }, {
           'text': 'July 4th',
-          'index': 3
+          'value': 'flareon'
         }, {
           'text': 'New Year\'s Eve',
-          'index': 2
+          'value': 'jolteon'
         }, {
           'text': 'Earth Day',
-          'index': 6
+          'value': 'leafeon'
         }, {
           'text': 'Valentine\'s Day',
-          'index': 8
+          'value': 'sylveon'
         }, {
           'text': 'Thanksgiving',
-          'index': 0
+          'value': 'eevee'
         }
       ]
     }, {
       'text': 'Which of these pets would you like the most?',
+      'answer': null,
       'answers':[
         {
           'text': 'Hedgehog',
-          'index': 2
+          'value': 'jolteon'
         }, {
           'text': 'One or multiple fish',
-          'index': 1
+          'value': 'vaporeon'
         }, {
           'text': 'Cat',
-          'index': 7
+          'value': 'glaceon'
         }, {
           'text': 'Dog',
-          'index': 8
+          'value': 'sylveon'
         }, {
           'text': 'Snake',
-          'index': 5
+          'value': 'umbreon'
         }, {
           'text': 'Hamster',
-          'index': 3
+          'value': 'flareon'
         }, {
           'text': 'Any kind of insect(s)',
-          'index': 6
+          'value': 'leafeon'
         }
       ]
     }, {
       'text': 'Which of these do you fear the most?',
+      'answer': null,
       'answers':[
         {
           'text': 'Getting lost in a park at night',
-          'index': 4
+          'value': 'espeon'
         }, {
           'text': 'Being in a building on fire',
-          'index': 7
+          'value': 'glaceon'
         }, {
           'text': 'Getting lost at sea',
-          'index': 3
+          'value': 'flareon'
         }, {
           'text': 'Being embarassed or humiliated in front of many people',
-          'index': 5
+          'value': 'umbreon'
         }, {
           'text': 'A swarm of locusts or vicious insects',
-          'index': 6
+          'value': 'leafeon'
         }, {
           'text': 'Locked in a small room',
-          'index': 0
+          'value': 'eevee'
         }, {
           'text': 'Being paralyzed or immobile',
-          'index': 2
+          'value': 'jolteon'
         }, {
           'text': 'Getting trapped in the desert',
-          'index': 1
+          'value': 'vaporeon'
         }, {
           'text': 'Having no friends',
-          'index': 8
+          'value': 'sylveon'
         }
       ]
     }, {
       'text': 'What virtue(s) do you appreciate the most in others?',
+      'answer': null,
       'answers':[
         {
           'text': 'Genuineness and honesty',
-          'index': 0
+          'value': 'eevee'
         }, {
           'text': 'Composure and a cool attitude',
-          'index': 7
+          'value': 'glaceon'
         }, {
           'text': 'An optimistic view of life',
-          'index': 8
+          'value': 'sylveon'
         }, {
           'text': 'Intelligence and wit',
-          'index': 4
+          'value': 'espeon'
         }, {
           'text': 'Going with the flow',
-          'index': 1
+          'value': 'vaporeon'
         }, {
           'text': 'Quick thinking',
-          'index': 2
+          'value': 'jolteon'
         }, {
           'text': 'Caring for nature',
-          'index': 6
+          'value': 'leafeon'
         }, {
           'text': 'Energy and passion',
-          'index': 3
+          'value': 'flareon'
         }, {
           'text': 'Being happy with solitude',
-          'index': 5
+          'value': 'umbreon'
         }
       ]
     }, {
       'text': 'Which of the below jobs or hobbies is your favorite?',
+      'answer': null,
       'answers':[
         {
           'text': 'Teaching',
-          'index': 4
+          'value': 'espeon'
         }, {
           'text': 'Cooking',
-          'index': 3
+          'value': 'flareon'
         }, {
           'text': 'Gardening and/or hiking',
-          'index': 6
+          'value': 'leafeon'
         }, {
           'text': 'Anything with lots of traveling',
-          'index': 1
+          'value': 'vaporeon'
         }, {
           'text': 'Being an entertainer',
-          'index': 8
+          'value': 'sylveon'
         }, {
           'text': 'Exercising',
-          'index': 2
+          'value': 'jolteon'
         }, {
           'text': 'Not sure, I have a lot',
-          'index': 0
+          'value': 'eevee'
         }
       ]
     }, {
       'text': 'How do you feel about following rules?',
+      'answer': null,
       'answers':[
         {
           'text': 'They\'re there for a reason, so I follow them',
-          'index': 0
+          'value': 'eevee'
         }, {
           'text': 'I often disobey them on purpose',
-          'index': 5
+          'value': 'umbreon'
         }, {
           'text': 'As long as they don\'t get in my way, I don\'t care',
-          'index': 2
+          'value': 'jolteon'
         }, {
           'text': 'They annoy me, but I grudgingly follow them',
-          'index': 7
+          'value': 'glaceon'
         }, {
           'text': 'There\'s always a way around them',
-          'index': 1
+          'value': 'vaporeon'
         }, {
           'text': 'I always question why they need to be followed at all',
-          'index': 4
+          'value': 'espeon'
         }, {
           'text': 'I don\'t think about them',
-          'index': 3
+          'value': 'flareon'
         }
       ]
     }, {
       'text': 'Which of the following emotions or moods do you feel the most?',
+      'answer': null,
       'answers':[
         {
           'text': 'Joy',
-          'index': 8
+          'value': 'sylveon'
         }, {
           'text': 'Excitement',
-          'index': 3
+          'value': 'flareon'
         }, {
           'text': 'Carefree',
-          'index': 1
+          'value': 'vaporeon'
         }, {
           'text': 'Disgust',
-          'index': 7
+          'value': 'glaceon'
         }, {
           'text': 'Mischievous',
-          'index': 5
+          'value': 'umbreon'
         }, {
           'text': 'Thoughtful',
-          'index': 4
+          'value': 'espeon'
         }, {
           'text': 'Calm',
-          'index': 0
+          'value': 'eevee'
         }, {
           'text': 'Impatient',
-          'index': 2
+          'value': 'jolteon'
         }, {
           'text': 'Attentive',
-          'index': 6
+          'value': 'leafeon'
         }
       ]
     }, {
       'text': 'What\'s your favorite color?',
+      'answer': null,
       'answers':[
         {
           'text': 'Pink',
-          'index': 8
+          'value': 'sylveon'
         }, {
           'text': 'Red',
-          'index': 3
+          'value': 'flareon'
         }, {
           'text': 'Green',
-          'index': 6
+          'value': 'leafeon'
         }, {
           'text': 'Blue',
-          'index': 1
+          'value': 'vaporeon'
         }, {
           'text': 'White',
-          'index': 7
+          'value': 'glaceon'
         }, {
           'text': 'Yellow',
-          'index': 2
+          'value': 'jolteon'
         }, {
           'text': 'Black',
-          'index': 5
+          'value': 'umbreon'
         }, {
           'text': 'Brown',
-          'index': 0
+          'value': 'eevee'
         }, {
           'text': 'Purple',
-          'index': 4
+          'value': 'espeon'
         }
       ]
     }, {
       'text': 'If you could have one of the below superpowers, which would it be?',
+      'answer': null,
       'answers':[
         {
           'text': 'Create and control fire',
-          'index': 3
+          'value': 'flareon'
         }, {
           'text': 'Breathe underwater',
-          'index': 1
+          'value': 'vaporeon'
         }, {
           'text': 'Learn and memorize anything',
-          'index': 4
+          'value': 'espeon'
         }, {
           'text': 'Copy powers or strengths from others',
-          'index': 0
+          'value': 'eevee'
         }, {
           'text': 'Turn invisible',
-          'index': 5
+          'value': 'umbreon'
         }, {
           'text': 'Super speed',
-          'index': 2
+          'value': 'jolteon'
         }, {
           'text': 'Control nature',
-          'index': 6
+          'value': 'leafeon'
         }, {
           'text': 'Create and control ice',
-          'index': 7
+          'value': 'glaceon'
         }
       ]
     }, {
       'text': 'Which of the following topics or issues do you care about the most?',
+      'answer': null,
       'answers':[
         {
           'text': 'Environment',
-          'index': 6
+          'value': 'leafeon'
         }, {
           'text': 'Education',
-          'index': 4
+          'value': 'espeon'
         }, {
           'text': 'Public Safety',
-          'index': 8
+          'value': 'sylveon'
         }, {
           'text': 'Laws we follow',
-          'index': 3
+          'value': 'flareon'
         }, {
           'text': 'International Relations',
-          'index': 1
+          'value': 'vaporeon'
         }, {
           'text': 'It really depends',
-          'index': 0
+          'value': 'eevee'
         }, {
           'text': 'Nothing, I never follow this stuff',
-          'index': 7
+          'value': 'glaceon'
         }
       ]
     }, {
       'text': 'What topic do you enjoy talking about most on a date?',
+      'answer': null,
       'answers':[
         {
           'text': 'Just talking about our days',
-          'index': 0
+          'value': 'eevee'
         }, {
           'text': 'Pick one based on something around us',
-          'index': 6
+          'value': 'leafeon'
         }, {
           'text': 'Whatever is in the news',
-          'index': 4
+          'value': 'espeon'
         }, {
           'text': 'Any random topics that pop into our heads',
-          'index': 1
+          'value': 'vaporeon'
         }, {
           'text': 'I wouldn\'t do much talking',
-          'index': 7
+          'value': 'glaceon'
         }, {
           'text': 'Lots of different topics, one after the other',
-          'index': 2
+          'value': 'jolteon'
         }, {
           'text': 'Dating? I barely do any, if at all',
-          'index': 5
+          'value': 'umbreon'
         }
       ]
     }, {
       'text': 'If you had to guess what kind of crime you\'d commit, what would it be?',
+      'answer': null,
       'answers':[
         {
           'text': 'Drug use',
-          'index': 6
+          'value': 'leafeon'
         }, {
           'text': 'Robbery',
-          'index': 5
+          'value': 'umbreon'
         }, {
           'text': 'Arson',
-          'index': 3
+          'value': 'flareon'
         }, {
           'text': 'Hit and Run',
-          'index': 1
+          'value': 'vaporeon'
         }, {
           'text': 'None, I\'m a model citizen',
-          'index': 8
+          'value': 'sylveon'
         }
       ]
     }, {
       'text': 'You see a wallet in the street. What do you do?',
+      'answer': null,
       'answers':[
         {
           'text': 'Just walk past it, it\'s not my problem',
-          'index': 7
+          'value': 'glaceon'
         }, {
           'text': 'Look inside for any info on who lost it',
-          'index': 4
+          'value': 'espeon'
         }, {
           'text': 'Pick it up and keep walking. Finders keepers!',
-          'index': 5
+          'value': 'umbreon'
         }, {
           'text': 'Ask around to try and find who lost it',
-          'index': 8
+          'value': 'sylveon'
         }, {
           'text': 'Running around rapidly and asking people',
-          'index': 2
+          'value': 'jolteon'
         }, {
           'text': 'I don\'t know, it\'s a tough situation',
-          'index': 0
+          'value': 'eevee'
         }
       ]
     }

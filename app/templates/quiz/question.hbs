@@ -1,6 +1,20 @@
 <p>
+  There are {{quiz_length}} questions!
+</p>
+
+<p>
+  {{#each all_questions as |question_number|}}
+    {{link-to question_number 'quiz.question' question_number activeClass="font-bold"}}
+  {{/each}}
+</p>
+
+<br>
+
+<p>
   {{model.text}}
 </p>
+
+<hr>
 
 <ul>
   {{#each model.answers as |answer|}}
