@@ -2,10 +2,10 @@ import Service from '@ember/service';
 import { computed, set } from '@ember/object';
 
 export default Service.extend({
-  name: "This is the Eevee quiz!",
+  current_question: 1,
 
   length: computed('questions', function(){
-    return (this.get('questions').length);
+    return parseInt(this.get('questions').length);
   }),
 
   results: computed('answers', function(){
@@ -41,12 +41,13 @@ export default Service.extend({
   selectAnswer: function(index, answer) {
     const i = parseInt(index),
           question = this.get('questions').objectAt(i),
-          next_question = this.get('questions').objectAt((i + 1)),
           answers = this.get('answers');
+    let current_question = parseInt(this.get('current_question'));
 
     set(question, 'answer', answer);
-    set(next_question, 'answer', false);
     set(answers, i, answer);
+
+    if (i === current_question) { this.incrementProperty('current_question'); }
 
     this.notifyPropertyChange('results');
   },
