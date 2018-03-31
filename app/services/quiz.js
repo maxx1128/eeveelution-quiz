@@ -8,6 +8,10 @@ export default Service.extend({
     return parseInt(this.get('questions').length);
   }),
 
+  completed: computed('current_question', 'questions', function(){
+    return (this.get('current_question') === this.get('questions').length);
+  }),
+
   results: computed('answers', function(){
     const answers = this.get('answers');
     let results = {};

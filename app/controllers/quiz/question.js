@@ -8,11 +8,11 @@ import { computed } from '@ember/object';
 export default Controller.extend({
   quiz: service(),
 
-  at_last_question: computed('model', 'quiz', function(){
-    const active_question = this.get('model.index'),
+  at_last_question: computed('quiz', function(){
+    const recent_question = this.get('quiz.current_question'),
           last_question = (this.get('quiz.length') - 1);
 
-    return (active_question === last_question);
+    return (recent_question >= last_question);
   }),
 
   all_questions: computed('model', 'quiz.length', function(){
@@ -38,17 +38,18 @@ export default Controller.extend({
 
   actions: {
     selectAnswer(index, answer) {
-      const i = parseInt(index),
-            at_last_question = this.get('at_last_question');
+      const i = parseInt(index);
 
       this.get('quiz').selectAnswer(i, answer);
 
-      if (at_last_question) {
-        this.transitionToRoute('application'); // Later goes to results!
+      if (this.get('quiz.completed')) {
+        this.transitionToRoute('results'); // Later goes to results!
       } else {
         this.transitionToRoute('quiz.question', (i + 1));
         this.notifyPropertyChange('all_questions');
       }
+
+      this.notifyPropertyChange('at_last_question');
     }
   }
 });

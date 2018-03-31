@@ -10,6 +10,9 @@ Router.map(function() {
   this.route('quiz', function() {
     this.route('question', { path: ':question' });
   });
+  this.route('results', function() {
+    this.route('pokemon', { path: ':pokemon' });
+  });
 });
 
 export default Router;

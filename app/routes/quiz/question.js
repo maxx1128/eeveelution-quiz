@@ -8,6 +8,7 @@ export default Route.extend({
     this.set('i', parseInt(params.question));
     const i = this.get('i'),
           current_question = this.get('quiz.current_question'),
+          quiz_completed = this.get('quiz.completed'),
           nonexistent_question = (i > (this.get('quiz.questions').length - 1)),
           unanswered_question = (i > current_question );
 
@@ -15,6 +16,8 @@ export default Route.extend({
       this.transitionTo('quiz');
     } else if (unanswered_question) {
       this.transitionTo('quiz.question', current_question);
+    } else if (quiz_completed) {
+      this.transitionTo('results');
     } else {
       return this.get('quiz.questions')[i];
     }
