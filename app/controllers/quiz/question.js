@@ -2,9 +2,6 @@ import Controller from '@ember/controller';
 import { inject as service } from '@ember/service';
 import { computed } from '@ember/object';
 
-// setupController needed to pass the param to the model?
-// In case the question index is needed to update the quiz service with the answer
-
 export default Controller.extend({
   quiz: service(),
 
@@ -16,14 +13,11 @@ export default Controller.extend({
   }),
 
   all_questions: computed('model', 'quiz.length', function(){
-    const limit = this.get('quiz.length'),
-          current_index = this.get('model.index');
+    const limit = this.get('quiz.length');
     let questions_array = [];
 
     for (var i = 1; i < limit; i++) {
-      const question = this.get('quiz.questions').objectAt(i),
-            answer = question.answer,
-            available = (i <= this.get('quiz.current_question'));
+      const available = (i <= this.get('quiz.current_question'));
 
       const data = {
         index: i,
