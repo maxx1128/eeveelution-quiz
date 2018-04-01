@@ -12,6 +12,10 @@ export default Controller.extend({
     return (recent_question >= last_question);
   }),
 
+  answers: computed('model.answers', function(){
+    return shuffle(this.get('model.answers'));
+  }),
+
   all_questions: computed('model', 'quiz.length', function(){
     const limit = this.get('quiz.length');
     let questions_array = [];
@@ -47,3 +51,23 @@ export default Controller.extend({
     }
   }
 });
+
+function shuffle(array) {
+  let counter = array.length;
+
+  // While there are elements in the array
+  while (counter > 0) {
+      // Pick a random index
+      let index = Math.floor(Math.random() * counter);
+
+      // Decrease counter by 1
+      counter--;
+
+      // And swap the last element with it
+      let temp = array[counter];
+      array[counter] = array[index];
+      array[index] = temp;
+  }
+
+  return array;
+}

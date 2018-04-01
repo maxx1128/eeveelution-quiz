@@ -17,7 +17,7 @@
 <hr>
 
 <ul>
-  {{#each model.answers as |answer|}}
+  {{#each answers as |answer|}}
     <li {{action 'selectAnswer' model.index answer.value}}>
       {{answer.text}} ({{answer.value}})
     </li>
