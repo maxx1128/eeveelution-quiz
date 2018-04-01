@@ -6,6 +6,10 @@
   {{#each all_pokemon as |pokemon|}}
     <li>
       {{ link-to pokemon.name 'results.pokemon' pokemon.name}}
+
+      {{#if (eq winner pokemon.name)}}
+        (That's you!)
+      {{/if}}
     </li>
   {{/each}}
 </ul>
