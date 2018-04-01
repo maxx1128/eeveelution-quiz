@@ -19,7 +19,7 @@
 <ul>
   {{#each answers as |answer|}}
     <li {{action 'selectAnswer' model.index answer.value}}>
-      {{answer.text}} ({{answer.value}})
+      {{answer.text}}
     </li>
   {{/each}}
 </ul>
