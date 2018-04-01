@@ -17,7 +17,7 @@ export default Route.extend({
     } else if (unanswered_question) {
       this.transitionTo('quiz.question', current_question);
     } else if (quiz_completed) {
-      this.transitionTo('results');
+      this.transitionTo('results.pokemon', quiz.winner);
     } else {
       return this.get('quiz.questions')[i];
     }

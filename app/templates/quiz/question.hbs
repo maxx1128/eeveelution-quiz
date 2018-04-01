@@ -1,8 +1,4 @@
 <p>
-  {{quiz.completed}}
-</p>
-
-<p>
   {{#each all_questions as |question|}}
     {{#if question.available}}
       {{link-to question.index 'quiz.question' question.index activeClass="font-bold"}}

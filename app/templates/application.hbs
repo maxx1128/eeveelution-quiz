@@ -3,7 +3,15 @@
 </p>
 
 <p>
-  {{link-to 'Take the quiz!' 'quiz'}}
+  {{#if quiz.completed}}
+    {{link-to 'See Your Results' 'results.pokemon' quiz.winner}}
+  {{else}}
+    {{link-to 'Take the quiz!' 'quiz'}}
+  {{/if}}
+</p>
+
+<p>
+  {{link-to 'Meet the Eeveelutions' 'results'}}
 </p>
 
 

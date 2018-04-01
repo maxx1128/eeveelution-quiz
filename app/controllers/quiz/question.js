@@ -37,7 +37,7 @@ export default Controller.extend({
       this.get('quiz').selectAnswer(i, answer);
 
       if (this.get('quiz.completed')) {
-        this.transitionToRoute('results'); // Later goes to results!
+        this.transitionToRoute('results.pokemon', this.get('quiz.winner'));
       } else {
         this.transitionToRoute('quiz.question', (i + 1));
         this.notifyPropertyChange('all_questions');

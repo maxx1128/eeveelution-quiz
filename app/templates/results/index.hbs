@@ -1,0 +1,11 @@
+<h4>
+  Results index page!
+</h4>
+
+<ul>
+  {{#each all_pokemon as |pokemon|}}
+    <li>
+      {{ link-to pokemon.name 'results.pokemon' pokemon.name}}
+    </li>
+  {{/each}}
+</ul>
