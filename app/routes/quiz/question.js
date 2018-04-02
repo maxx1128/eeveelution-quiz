@@ -2,6 +2,7 @@ import { inject as service } from '@ember/service';
 import Route from '@ember/routing/route';
 
 export default Route.extend({
+  cookies: service(),
   quiz: service(),
 
   model: function(params) {
@@ -17,7 +18,7 @@ export default Route.extend({
     } else if (unanswered_question) {
       this.transitionTo('quiz.question', current_question);
     } else if (quiz_completed) {
-      this.transitionTo('results.pokemon', quiz.winner);
+      this.transitionTo('results.pokemon', this.get('quiz.winner'));
     } else {
       return this.get('quiz.questions')[i];
     }

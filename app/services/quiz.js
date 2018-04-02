@@ -1,7 +1,19 @@
 import Service from '@ember/service';
+import { inject as service } from '@ember/service';
 import { computed, set } from '@ember/object';
 
 export default Service.extend({
+  cookies: service(),
+
+  init(){
+    this._super(...arguments);
+
+    let cookies = this.get('cookies');
+
+    if (cookies.exists('winner')) { this.set('winner', cookies.read('winner')); }
+    if (cookies.exists('completed')) { this.set('completed', cookies.read('completed')); }
+  },
+
   current_question: 1,
 
   length: computed('questions', function(){

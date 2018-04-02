@@ -3,14 +3,8 @@ import { inject as service } from '@ember/service';
 import { computed } from '@ember/object';
 
 export default Controller.extend({
+  cookies: service(),
   quiz: service(),
-
-  at_last_question: computed('quiz', function(){
-    const recent_question = this.get('quiz.current_question'),
-          last_question = (this.get('quiz.length') - 1);
-
-    return (recent_question >= last_question);
-  }),
 
   answers: computed('model.answers', function(){
     return shuffle(this.get('model.answers'));
@@ -41,13 +35,15 @@ export default Controller.extend({
       this.get('quiz').selectAnswer(i, answer);
 
       if (this.get('quiz.completed')) {
+        let cookies = this.get('cookies');
+        cookies.write('winner', this.get('quiz.winner'));
+        cookies.write('completed', this.get('quiz.completed'));
+
         this.transitionToRoute('results.pokemon', this.get('quiz.winner'));
       } else {
         this.transitionToRoute('quiz.question', (i + 1));
         this.notifyPropertyChange('all_questions');
       }
-
-      this.notifyPropertyChange('at_last_question');
     }
   }
 });
