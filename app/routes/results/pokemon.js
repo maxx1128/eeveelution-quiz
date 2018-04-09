@@ -1,12 +1,11 @@
-import { inject as service } from '@ember/service';
 import Route from '@ember/routing/route';
+import results_data from './../../data/results';
 
 export default Route.extend({
-  results: service(),
 
   model: function(params) {
     const pokemon_in_url = params.pokemon,
-          possible_pokemon = this.get('results.pokemon');
+          possible_pokemon = results_data;
     let results = false;
 
     possible_pokemon.forEach(function(pokemon){

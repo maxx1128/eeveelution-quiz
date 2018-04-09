@@ -2,14 +2,16 @@
   Results index page!
 </h4>
 
-<ul>
+<div class="flex flex-wrap">
   {{#each all_pokemon as |pokemon|}}
-    <li>
+    <div class="flex flex-col items-center" style="flex: 1 1 33%;">
+      <img src="/assets/images/{{pokemon.name}}.png" alt="Picture of {{pokemon.name}}">
+      
       {{ link-to pokemon.name 'results.pokemon' pokemon.name}}
 
       {{#if (eq winner pokemon.name)}}
         (That's you!)
       {{/if}}
-    </li>
+    </div>
   {{/each}}
-</ul>
+</div>
