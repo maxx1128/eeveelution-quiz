@@ -2,6 +2,7 @@ import Service from '@ember/service';
 import { inject as service } from '@ember/service';
 import { computed, set } from '@ember/object';
 import questions from './../data/questions';
+import results_data from './../data/results';
 
 export default Service.extend({
   cookies: service(),
@@ -19,12 +20,12 @@ export default Service.extend({
 
   current_question: 1,
 
-  length: computed('questions', function(){
-    return parseInt(this.get('questions').length);
+  length: computed('questions_data', function(){
+    return parseInt(this.get('questions_data').length);
   }),
 
-  completed: computed('current_question', 'questions', function(){
-    return (this.get('current_question') === this.get('questions').length);
+  completed: computed('current_question', 'questions_data', function(){
+    return (this.get('current_question') === this.get('questions_data').length);
   }),
 
   results: computed('answers', function(){
@@ -59,7 +60,7 @@ export default Service.extend({
 
   selectAnswer: function(index, answer) {
     const i = parseInt(index),
-          question = this.get('questions').objectAt(i),
+          question = this.get('questions_data').objectAt(i),
           answers = this.get('answers');
     let current_question = parseInt(this.get('current_question'));
 
@@ -71,5 +72,6 @@ export default Service.extend({
     this.notifyPropertyChange('results');
   },
 
-  questions: questions
+  questions_data: questions,
+  answers_data: results_data
 });

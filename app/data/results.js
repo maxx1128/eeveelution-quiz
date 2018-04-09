@@ -36,6 +36,6 @@ const results = [
     'type': 'fairy',
     'description': "People likely smile the second they see you from your memories with each other. Helping others, friends and strangers, are high priorities as you try and help others as much as possible. You'll likely make a difference in many people's lives, and brighten up their days too. While you make the world better for many others, obviously you can't forget your happiness either. Make some 'me time' a priority, since it'll be hard for you to keep helping others if you fizzle out. After all, others care for your happiness as much as you care for theirs. Don't let them down!"
   }
-]
+];
 
 export default results;

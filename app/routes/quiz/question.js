@@ -10,7 +10,7 @@ export default Route.extend({
     const i = this.get('i'),
           current_question = this.get('quiz.current_question'),
           quiz_completed = this.get('quiz.completed'),
-          nonexistent_question = (i > (this.get('quiz.questions').length - 1)),
+          nonexistent_question = (i > (this.get('quiz.questions_data').length - 1)),
           unanswered_question = (i > current_question );
 
     if (nonexistent_question) {
@@ -20,7 +20,7 @@ export default Route.extend({
     } else if (quiz_completed) {
       this.transitionTo('results.pokemon', this.get('quiz.winner'));
     } else {
-      return this.get('quiz.questions')[i];
+      return this.get('quiz.questions_data')[i];
     }
   },
 
