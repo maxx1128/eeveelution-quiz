@@ -1,5 +1,6 @@
 import { module, test } from 'qunit';
 import { setupTest } from 'ember-qunit';
+import clearAllCookies from 'ember-cookies/clear-all-cookies';
 
 module('Unit | Service | quiz', function(hooks) {
   setupTest(hooks);
@@ -19,6 +20,7 @@ module('Unit | Service | quiz', function(hooks) {
     quiz.selectAnswer(5, 'espeon');
 
     assert.equal(quiz.get('current_question'), 4, 'doesn\'t change your progress if you answer in the wrong order');
+    clearAllCookies();
   });
 
   test('it tracks your answers to each question', function(assert) {
@@ -46,6 +48,7 @@ module('Unit | Service | quiz', function(hooks) {
       quiz.selectAnswer(key, pokemon);
       assert.equal(quiz.get('answers')[key], pokemon, `Answer ${key} is recorded as ${pokemon}`);
     }
+    clearAllCookies();
   });
 
   test('it knows when you\'re finished', function(assert) {
@@ -61,6 +64,6 @@ module('Unit | Service | quiz', function(hooks) {
 
     assert.equal(quiz.get('completed'), true, 'the completed property becomes true');
     assert.equal(quiz.get('winner'), 'espeon', 'it learns the winning result');
+    clearAllCookies();
   });
 });
-

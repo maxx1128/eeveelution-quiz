@@ -1,16 +1,16 @@
-<p>
+<p data-test="Nav-HomeLink">
   {{link-to 'Homepage' 'application'}}
 </p>
 
-<p>
+<p data-test="Nav-QuizLink">
   {{#if quiz.completed}}
     {{link-to 'See Your Results' 'results.pokemon' quiz.winner}}
   {{else}}
-    {{link-to 'Take the quiz!' 'quiz'}}
+    {{link-to 'Take the Quiz!' 'quiz'}}
   {{/if}}
 </p>
 
-<p>
+<p data-test="Nav-ResultsLink">
   {{link-to 'Meet the Eeveelutions' 'results'}}
 </p>
 
@@ -21,6 +21,14 @@
 
 <br><br>
 
-<p>
-  https://tailwindcss.com/docs/installation/
-</p>
+<ul>
+  <li>
+    https://tailwindcss.com/docs/installation/
+  </li>
+  <li>
+    https://github.com/emberjs/ember-test-helpers/blob/master/API.md#pausetest
+  </li>
+  <li>
+    https://github.com/simplabs/qunit-dom/blob/master/API.md#hasanytext
+  </li>
+</ul>

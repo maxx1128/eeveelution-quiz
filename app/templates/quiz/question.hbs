@@ -1,9 +1,13 @@
-<p>
+<p data-test="QuestionList">
   {{#each all_questions as |question|}}
     {{#if question.available}}
-      {{link-to question.index 'quiz.question' question.index activeClass="font-bold"}}
+      <span data-test="QuestionItem-Active">
+        {{link-to question.index 'quiz.question' question.index activeClass="font-bold"}}
+      </span>
     {{else}}
-      {{question.index}}
+      <span data-test="QuestionItem">
+        {{question.index}}
+      </span>
     {{/if}}
   {{/each}}
 </p>
@@ -16,9 +20,9 @@
 
 <hr>
 
-<ul>
+<ul data-test="AnswerList">
   {{#each answers as |answer|}}
-    <li {{action 'selectAnswer' model.index answer.value}}>
+    <li data-test="AnswerItem" {{action 'selectAnswer' model.index answer.value}}>
       {{answer.text}}
     </li>
   {{/each}}
