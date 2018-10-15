@@ -1,5 +1,5 @@
 import { module, test } from 'qunit';
-import { findAll, click, visit, currentURL } from '@ember/test-helpers';
+import { findAll, click, visit, currentURL, waitFor } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
 import clearAllCookies from 'ember-cookies/clear-all-cookies';
 
@@ -56,7 +56,9 @@ module('Acceptance | quiz', function(hooks) {
     }
 
     await click('[data-test=AnswerItem]:first-of-type');
+    await waitFor('[data-test=APIData]');
     assert.equal(currentURL().startsWith('/results/'), true, 'You go to a results page');
+    // clearAllCookies();
   });
 
   test('the app remembers you finish the quiz', async function(assert) {

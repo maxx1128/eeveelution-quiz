@@ -1,9 +1,21 @@
+{{#each dexEntries as |entry|}}
+<ul data-test="APIData">
+  <li>
+    {{ entry.version.name }}
+  </li>
+  <li>
+    {{entry.flavor_text}}
+  </li>
+</ul>
+<br><br>
+{{/each}}
+
 <h3>
-  {{model.name}}
+  {{custom.name}}
 </h3>
 
-<img src="/assets/images/{{model.name}}.png" alt="Picture of {{model.name}}">
+<img src="/assets/images/{{custom.name}}.png" alt="Picture of {{custom.name}}">
 
 <p class="text-gray">
-  {{model.description}}
+  {{custom.description}}
 </p>

@@ -1,9 +1,11 @@
+{{ testApi }}
+
 <p data-test="Nav-HomeLink">
   {{link-to 'Homepage' 'application'}}
 </p>
 
 <p data-test="Nav-QuizLink">
-  {{#if quiz.completed}}
+  {{#if completed}}
     {{link-to 'See Your Results' 'results.pokemon' quiz.winner}}
   {{else}}
     {{link-to 'Take the Quiz!' 'quiz'}}
