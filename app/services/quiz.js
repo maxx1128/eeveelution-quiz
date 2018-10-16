@@ -28,6 +28,24 @@ export default Service.extend({
     return (this.get('current_question') === this.get('questions_data').length);
   }),
 
+  all_questions: computed('length', function(){
+    const limit = this.get('length');
+    let questions_array = [];
+
+    for (var i = 1; i < limit; i++) {
+      const available = (i <= this.get('current_question'));
+
+      const data = {
+        index: i,
+        available: available
+      }
+
+      questions_array.push(data);
+    }
+
+    return questions_array;
+  }),
+
   results: computed('answers', function(){
     const answers = this.get('answers');
     let results = {};
@@ -69,6 +87,7 @@ export default Service.extend({
 
     if (i === current_question) { this.incrementProperty('current_question'); }
 
+    this.notifyPropertyChange('all_questions');
     this.notifyPropertyChange('results');
   },
 

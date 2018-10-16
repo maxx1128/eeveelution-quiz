@@ -2,6 +2,22 @@ import { module, test } from 'qunit';
 import { setupTest } from 'ember-qunit';
 import clearAllCookies from 'ember-cookies/clear-all-cookies';
 
+const answers = [
+  'eevee',
+  'vaporeon',
+  'jolteon',
+  'flareon',
+  'espeon',
+  'umbreon',
+  'leafeon',
+  'glaceon',
+  'sylveon',
+  'eevee',
+  'flareon',
+  'eevee',
+  'glaceon'
+];
+
 module('Unit | Service | quiz', function(hooks) {
   setupTest(hooks);
 
@@ -26,29 +42,30 @@ module('Unit | Service | quiz', function(hooks) {
   test('it tracks your answers to each question', function(assert) {
     let quiz = this.owner.lookup('service:quiz');
 
-    const answers = {
-      1: 'eevee',
-      2: 'vaporeon',
-      3: 'jolteon',
-      4: 'flareon',
-      5: 'espeon',
-      6: 'umbreon',
-      7: 'leafeon',
-      8: 'glaceon',
-      9: 'sylveon',
-      10: 'eevee',
-      11: 'flareon',
-      12: 'eevee',
-      13: 'glaceon'
-    };
+    answers.forEach(function(pokemon, index){
+      quiz.selectAnswer(index, pokemon);
+      assert.equal(quiz.get('answers')[index], pokemon, `Answer ${index + 1} is recorded as ${pokemon}`);
+    });
 
-    for (var key in answers) {
-      let pokemon = answers[key];
-
-      quiz.selectAnswer(key, pokemon);
-      assert.equal(quiz.get('answers')[key], pokemon, `Answer ${key} is recorded as ${pokemon}`);
-    }
     clearAllCookies();
+  });
+
+  test('it makes current and past questions available to answer', function(assert) {
+    const quiz = this.owner.lookup('service:quiz');
+
+    answers.forEach(function(pokemon, index){
+      const question_number = index + 1;
+
+      quiz.selectAnswer(index, pokemon);
+      const available_questions = quiz.get('all_questions').filter(question => (question.available)).length;
+
+      assert.equal(question_number, available_questions, `Question ${question_number} has ${available_questions} question(s) available`);
+    });
+
+
+    clearAllCookies();
+
+    // Take results, filter out the ones that have available set to true, and make sure it's the right length
   });
 
   test('it knows when you\'re finished', function(assert) {
