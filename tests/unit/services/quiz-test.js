@@ -62,10 +62,7 @@ module('Unit | Service | quiz', function(hooks) {
       assert.equal(question_number, available_questions, `Question ${question_number} has ${available_questions} question(s) available`);
     });
 
-
     clearAllCookies();
-
-    // Take results, filter out the ones that have available set to true, and make sure it's the right length
   });
 
   test('it knows when you\'re finished', function(assert) {
