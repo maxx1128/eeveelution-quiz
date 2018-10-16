@@ -1,0 +1,29 @@
+
+#{$g-nmsp}hidden { display: none; }
+
+@each $label, $bp in $breakpoint-map {
+  $bp-label-final: '';
+
+  @if ($label != 'xs') {
+    #{$g-nmsp}hidden-#{$label}-up {
+      @include larger-than($label) { display: none; }
+    }
+    #{$g-nmsp}hidden-#{$label}-down {
+      @include smaller-than($label) { display: none; }
+    }
+  }
+}
+
+#{$g-nmsp}overflow-x-scroll { overflow-x: scroll; }
+#{$g-nmsp}overflow-y-scroll { overflow-y: scroll; }
+
+#{$g-nmsp}screenReader {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  position: absolute !important;
+}
+
+#{$g-nmsp}overflow-x-scroll { overflow-x: scroll; }
+#{$g-nmsp}overflow-y-scroll { overflow-y: scroll; }
