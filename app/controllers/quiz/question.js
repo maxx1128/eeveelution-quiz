@@ -1,6 +1,7 @@
 import Controller from '@ember/controller';
 import { inject as service } from '@ember/service';
 import { computed } from '@ember/object';
+import { reads } from '@ember/object/computed';
 import shuffle from '../../helpers/shuffle';
 
 export default Controller.extend({
@@ -11,23 +12,7 @@ export default Controller.extend({
     return shuffle(this.get('model.answers'));
   }),
 
-  all_questions: computed('model', 'quiz.length', function(){
-    const limit = this.get('quiz.length');
-    let questions_array = [];
-
-    for (var i = 1; i < limit; i++) {
-      const available = (i <= this.get('quiz.current_question'));
-
-      const data = {
-        index: i,
-        available: available
-      }
-
-      questions_array.push(data);
-    }
-
-    return questions_array;
-  }),
+  all_questions: reads('quiz.all_questions'),
 
   actions: {
     selectAnswer(index, answer) {
@@ -43,7 +28,6 @@ export default Controller.extend({
         this.transitionToRoute('results.pokemon', this.get('quiz.winner'));
       } else {
         this.transitionToRoute('quiz.question', (i + 1));
-        this.notifyPropertyChange('all_questions');
       }
     }
   }
