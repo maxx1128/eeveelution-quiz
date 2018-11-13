@@ -1,3 +1,5 @@
+import fetch from 'fetch';
+
 class PokeAPIRequest {
   constructor(name) {
     this.name = name;
