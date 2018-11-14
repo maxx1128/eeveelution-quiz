@@ -2,9 +2,9 @@
   Results index page!
 </h4>
 
-<div class="flex flex-wrap" data-test="ResultsContainer">
+<div class="eq-flex eq-flex-wrap eq-flex-align-start" data-test="ResultsContainer">
   {{#each all_pokemon as |pokemon|}}
-    <div class="flex flex-col items-center" style="flex: 1 1 33%;">
+    <div class="eq-flex eq-flex-item eq-flex-column eq-flex-align-center" style="flex: 1 1 33%;">
       <img src="/assets/images/{{pokemon.name}}.png" alt="Picture of {{pokemon.name}}">
 
       {{ link-to pokemon.name 'results.pokemon' pokemon.name}}
