@@ -14,16 +14,7 @@
 
 <br>
 
-<p>
-  {{model.text}}
-</p>
-
-<hr>
-
-<ul data-test="AnswerList">
-  {{#each answers as |answer|}}
-    <li data-test="AnswerItem" {{action 'selectAnswer' model.index answer.value}}>
-      {{answer.text}}
-    </li>
-  {{/each}}
-</ul>
+{{quiz-question
+  question=model
+  onSelect=(action 'selectAnswer')
+}}
