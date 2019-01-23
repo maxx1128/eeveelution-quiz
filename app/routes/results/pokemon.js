@@ -22,11 +22,11 @@ export default Route.extend({
       this.transitionTo('results');
     }
 
-    return APIRequest.getSpeciesData().then(data => {
+    return APIRequest.getAllData().then(data => {
       if (results) {
         return {
           custom: results,
-          species: data
+          data: data
         };
       } else {
         this.transitionTo('results');
