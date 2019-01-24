@@ -4,18 +4,30 @@
 
 <img src="/assets/images/{{custom.name}}.png" alt="Picture of {{custom.name}}">
 
+{{poke-abilities
+    rawAbilities=baseData.abilities}}
+
+<br>
+
+{{poke-types
+    rawTypes=baseData.types}}
+
+<br>
+
+{{poke-stats
+    rawStats=baseData.stats}}
+
+<br>
+
+{{poke-sprites
+    sprites=baseData.sprites
+    name=custom.name}}
+
+<br>
+
 <p class="text-gray">
   {{custom.description}}
 </p>
 
-{{#each dexEntries as |entry|}}
-  <ul data-test="APIData">
-    <li>
-      {{ entry.version.name }}
-    </li>
-    <li>
-      {{entry.flavor_text}}
-    </li>
-  </ul>
-  <br><br>
-{{/each}}
+{{poke-entries
+    rawEntries=speciesData.flavor_text_entries}}

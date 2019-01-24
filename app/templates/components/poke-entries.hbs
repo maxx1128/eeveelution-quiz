@@ -1,0 +1,11 @@
+{{#each reversedEntries as |entry|}}
+  <ul data-test="APIData">
+    <li>
+      {{ entry.version.name }}
+    </li>
+    <li>
+      {{entry.flavor_text}}
+    </li>
+  </ul>
+  <br><br>
+{{/each}}

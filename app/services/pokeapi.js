@@ -8,9 +8,25 @@ class PokeAPIRequest {
   }
 
   async getSpeciesData() {
-    let response = await fetch(`${this.requestUrl}/pokemon-species/${this.name}/`);
-    let data = await response.json();
+    const response = await fetch(`${this.requestUrl}/pokemon-species/${this.name}/`);
+    const data = await response.json();
     return data;
+  }
+
+  async getBasicData() {
+    const response = await fetch(`${this.requestUrl}/pokemon/${this.name}/`);
+    const data = await response.json();
+    return data;
+  }
+
+  async getAllData() {
+    const species = await this.getSpeciesData();
+    const base = await this.getBasicData();
+
+    return {
+      species: species,
+      base: base
+    };
   }
 }
 
