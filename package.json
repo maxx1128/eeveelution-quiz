@@ -12,9 +12,11 @@
   "repository": "",
   "scripts": {
     "build": "ember build",
+    "prod": "ember build -e production",
     "lint:js": "eslint ./*.js app config lib server tests",
     "start": "ember serve",
-    "test": "ember test"
+    "test": "ember test",
+    "deploy": "yarn prod && yarn test"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
