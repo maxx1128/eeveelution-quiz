@@ -1,0 +1,32 @@
+.eq-results {
+  margin: 0;
+  padding: spacing();
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr) );
+  list-style-type: none;
+  grid-gap: spacing();
+}
+
+.eq-results__item {
+  display: flex;
+  padding: spacing();
+  flex-direction: column;
+  align-items: center;
+
+  background-color: color(mono, lighter);
+  box-shadow: container(box-shadow, 1);
+
+  @include larger-than(md) {
+    padding: spacing(double);
+  }
+}
+
+.eq-results__image {
+  width: 100%;
+  margin: auto 0;
+  margin-bottom: spacing();
+}
+
+.eq-results__label {
+  margin: auto 0 0;
+}

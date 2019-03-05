@@ -1,17 +1,19 @@
-<h4>
+<h1>
   Results index page!
-</h4>
+</h1>
 
-<div class="eq-flex eq-flex-wrap eq-flex-align-start" data-test="ResultsContainer">
+<ul class="eq-results" data-test="ResultsContainer">
   {{#each all_pokemon as |pokemon|}}
-    <div class="eq-flex eq-flex-item eq-flex-column eq-flex-align-center" style="flex: 1 1 33%;">
-      <img src="/assets/images/{{pokemon.name}}.png" alt="Picture of {{pokemon.name}}">
+    <li class="eq-results__item">
+      <img class="eq-results__image" src="/assets/images/{{pokemon.name}}.png" alt="Picture of {{pokemon.name}}">
 
-      {{ link-to pokemon.name 'results.pokemon' pokemon.name}}
+      <h5 class="eq-results__label">
+        {{ link-to pokemon.name 'results.pokemon' pokemon.name}}
 
-      {{#if (eq winner pokemon.name)}}
-        (That's you!)
-      {{/if}}
-    </div>
+        {{#if (eq winner pokemon.name)}}
+          (That's you!)
+        {{/if}}
+      </h5>
+    </li>
   {{/each}}
-</div>
+</ul>
