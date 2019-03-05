@@ -47,7 +47,7 @@ module('Acceptance | quiz', function(hooks) {
 
   test('finishing the quiz', async function(assert) {
     await visit('/quiz/1');
-    const allQuestions = findAll('[data-test=QuestionList] span');
+    const allQuestions = findAll('[data-test=QuestionList] li');
 
     for (let i = 2; i < (allQuestions.length + 1); i++) {
       await click('[data-test=AnswerItem]:first-of-type');

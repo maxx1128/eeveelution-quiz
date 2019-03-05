@@ -1,16 +1,10 @@
 import Controller from '@ember/controller';
 import { inject as service } from '@ember/service';
-import { computed } from '@ember/object';
 import { reads } from '@ember/object/computed';
-import shuffle from '../../helpers/shuffle';
 
 export default Controller.extend({
   cookies: service(),
   quiz: service(),
-
-  answers: computed('model.answers', function(){
-    return shuffle(this.get('model.answers'));
-  }),
 
   all_questions: reads('quiz.all_questions'),
 

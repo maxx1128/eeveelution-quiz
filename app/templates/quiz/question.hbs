@@ -1,29 +1,18 @@
-<p data-test="QuestionList">
+{{quiz-question
+  question=model
+  onSelect=(action 'selectAnswer')
+}}
+
+<ul data-test="QuestionList">
   {{#each all_questions as |question|}}
     {{#if question.available}}
-      <span data-test="QuestionItem-Active">
+      <li data-test="QuestionItem-Active">
         {{link-to question.index 'quiz.question' question.index activeClass="font-bold"}}
-      </span>
+      </li>
     {{else}}
-      <span data-test="QuestionItem">
+      <li data-test="QuestionItem">
         {{question.index}}
-      </span>
+      </li>
     {{/if}}
-  {{/each}}
-</p>
-
-<br>
-
-<p>
-  {{model.text}}
-</p>
-
-<hr>
-
-<ul data-test="AnswerList">
-  {{#each answers as |answer|}}
-    <li data-test="AnswerItem" {{action 'selectAnswer' model.index answer.value}}>
-      {{answer.text}}
-    </li>
   {{/each}}
 </ul>

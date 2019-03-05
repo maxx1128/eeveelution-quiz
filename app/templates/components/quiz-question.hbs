@@ -1,0 +1,13 @@
+<h5 data-test="QuestionItem">
+  {{question.text}}
+</h5>
+
+<ul data-test="AnswerList">
+  {{#each shuffledAnswers as |answer|}}
+    <li>
+      <button data-test="AnswerItem" {{action onSelect question.index answer.value}}>
+        {{answer.text}}
+      </button>
+    </li>
+  {{/each}}
+</ul>
