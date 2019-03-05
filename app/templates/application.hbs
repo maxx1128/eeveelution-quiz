@@ -1,21 +1,31 @@
-{{ testApi }}
+<div class="eq-wrapper">
+  <nav class="eq-wrapper__nav eq-nav">
+    <ul class="eq-nav__list">
+      <li class="eq-nav__list-item" data-test="Nav-HomeLink">
+        {{link-to 'Homepage' 'application' class="eq-nav__link"}}
+      </li>
 
-<p data-test="Nav-HomeLink">
-  {{link-to 'Homepage' 'application'}}
-</p>
+      <li class="eq-nav__list-item" data-test="Nav-QuizLink">
+        <strong>
+          {{#if completed}}
+            {{link-to 'See Your Results' 'results.pokemon' quiz.winner class="eq-nav__link"}}
+          {{else}}
+            {{link-to 'Take the Quiz!' 'quiz' class="eq-nav__link"}}
+          {{/if}}
+        </strong>
+      </li>
 
-<p data-test="Nav-QuizLink">
-  {{#if completed}}
-    {{link-to 'See Your Results' 'results.pokemon' quiz.winner}}
-  {{else}}
-    {{link-to 'Take the Quiz!' 'quiz'}}
-  {{/if}}
-</p>
+      <li class="eq-nav__list-item" data-test="Nav-ResultsLink">
+        {{link-to 'Meet the Eeveelutions' 'results' class="eq-nav__link"}}
+      </li>
+    </ul>
+  </nav>
 
-<p data-test="Nav-ResultsLink">
-  {{link-to 'Meet the Eeveelutions' 'results'}}
-</p>
+  <main class="eq-wrapper__main">
+    {{outlet}}
+  </main>
 
-<br><br>
-
-{{outlet}}
+  <footer class="eq-wrapper__footer eq-footer">
+    Find me on Github!
+  </footer>
+</div>

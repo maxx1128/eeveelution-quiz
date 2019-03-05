@@ -1,0 +1,15 @@
+.eq-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.eq-wrapper__nav,
+.eq-wrapper__footer {
+  flex: 0 1 auto;
+}
+
+.eq-wrapper__main {
+  padding: spacing();
+  flex: 1 1 auto;
+}
