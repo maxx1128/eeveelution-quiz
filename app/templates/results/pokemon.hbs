@@ -1,33 +1,46 @@
-<h1>
-  {{custom.name}}
-</h1>
+<div class="eq-profile">
+    <div class="eq-profile__results">
+        <div class="eq-profile__title">
+            <h1>
+                {{custom.name}}
+            </h1>
+        </div>
 
-<img src="/assets/images/{{custom.name}}.png" alt="Picture of {{custom.name}}">
+        <article class="eq-profile__description">
+            <p>
+                {{custom.description}}
+            </p>
+        </article>
+    </div>
 
-{{poke-abilities
-    rawAbilities=baseData.abilities}}
+    <div class="eq-profile__basic-info">
+        <div class="eq-profile__image">
+            <img src="/assets/images/{{custom.name}}.png" alt="Picture of {{custom.name}}">
+        </div>
+        <div class="eq-profile__sprites">
+            {{poke-sprites
+                sprites=baseData.sprites
+                name=custom.name}}
+        </div>
 
-<br>
+        <div class="eq-profile__types">
+            {{poke-types
+                rawTypes=baseData.types}}
+        </div>
 
-{{poke-types
-    rawTypes=baseData.types}}
+        <div class="eq-profile__abilities">
+            {{poke-abilities
+                rawAbilities=baseData.abilities}}
+        </div>
+    </div>
 
-<br>
+    <div class="eq-profile__stats">
+        {{poke-stats
+            rawStats=baseData.stats}}
+    </div>
 
-{{poke-stats
-    rawStats=baseData.stats}}
-
-<br>
-
-{{poke-sprites
-    sprites=baseData.sprites
-    name=custom.name}}
-
-<br>
-
-<p>
-  {{custom.description}}
-</p>
-
-{{poke-entries
-    rawEntries=speciesData.flavor_text_entries}}
+    <div class="eq-profile__entries">
+        {{poke-entries
+            rawEntries=speciesData.flavor_text_entries}}
+    </div>
+</div>
