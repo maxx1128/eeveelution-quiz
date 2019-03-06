@@ -1,0 +1,22 @@
+.eq-progress-bar {
+  position: relative;
+  width: 100%;
+}
+.eq-progress-bar__fill {
+  height: 100%;
+}
+
+.eq-progress-bar__finish {
+  position: absolute;
+  right: 0;
+  bottom: -12px;
+
+  height: 250%;
+
+  z-index: -1;
+}
+
+.eq-progress-bar__image {
+  display: block;
+  margin-left: auto;
+}
