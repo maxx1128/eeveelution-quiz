@@ -24,6 +24,10 @@ export default Service.extend({
     return parseInt(this.get('questions_data').length);
   }),
 
+  progress: computed('current_question', 'length', function() {
+    return this.get('current_question') / this.get('length');
+  }),
+
   completed: computed('current_question', 'questions_data', function(){
     return (this.get('current_question') === this.get('questions_data').length);
   }),
