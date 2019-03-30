@@ -1,11 +1,11 @@
-<h5 data-test="QuestionItem">
+<h5 class="eq-questions__title" data-test="QuestionItem">
   {{question.text}}
 </h5>
 
-<ul data-test="AnswerList">
+<ul class="eq-questions__list" data-test="AnswerList">
   {{#each shuffledAnswers as |answer|}}
-    <li>
-      <button data-test="AnswerItem" {{action onSelect question.index answer.value}}>
+    <li class="eq-questions__item">
+      <button class="eq-questions__button" data-test="AnswerItem" {{action onSelect question.index answer.value}}>
         {{answer.text}}
       </button>
     </li>
