@@ -1,6 +1,7 @@
 .eq-progress-bar {
   position: relative;
   width: 100%;
+  margin-top: auto;
 }
 .eq-progress-bar__fill {
   height: 100%;
@@ -11,12 +12,14 @@
   right: 0;
   bottom: -12px;
 
-  height: 250%;
+  height: 100px;
 
   z-index: -1;
 }
 
 .eq-progress-bar__image {
   display: block;
+  height: 50px;
+  min-width: 50px;
   margin-left: auto;
 }

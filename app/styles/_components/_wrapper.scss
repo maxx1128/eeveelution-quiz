@@ -10,6 +10,8 @@
 }
 
 .eq-wrapper__main {
+  display: flex;
   padding: spacing();
+  flex-direction: column;
   flex: 1 1 auto;
 }
