@@ -1,0 +1,16 @@
+.eq-breadcrumbs__list {
+  display: inline-flex;
+  padding: 0;
+  margin: 0 auto 75px;
+  flex-wrap: wrap;
+
+  list-style: none;
+}
+
+.eq-breadcrumbs__item {
+  padding: spacing(half);
+}
+
+.eq-breadcrumbs__item--incomplete {
+  opacity: 0.3;
+}

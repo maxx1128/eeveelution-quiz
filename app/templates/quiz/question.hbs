@@ -3,14 +3,14 @@
   onSelect=(action 'selectAnswer')
 }}
 
-<ul data-test="QuestionList">
+<ul class="eq-breadcrumbs__list" data-test="QuestionList">
   {{#each all_questions as |question|}}
     {{#if question.available}}
-      <li data-test="QuestionItem-Active">
+      <li class="eq-breadcrumbs__item" data-test="QuestionItem-Active">
         {{link-to question.index 'quiz.question' question.index activeClass="font-bold"}}
       </li>
     {{else}}
-      <li data-test="QuestionItem">
+      <li class="eq-breadcrumbs__item eq-breadcrumbs__item--incomplete" data-test="QuestionItem">
         {{question.index}}
       </li>
     {{/if}}
