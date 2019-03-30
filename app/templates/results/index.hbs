@@ -1,19 +1,21 @@
-<h1>
-  Results index page!
+<h1 class="eq-results__title">
+  Learn more about the Eeveelutions!
 </h1>
 
 <ul class="eq-results" data-test="ResultsContainer">
   {{#each all_pokemon as |pokemon|}}
-    <li class="eq-results__item">
-      <img class="eq-results__image" src="/assets/images/{{pokemon.name}}.png" alt="Picture of {{pokemon.name}}">
+    <li>
+      {{#link-to 'results.pokemon' pokemon.name class="eq-results__item"}}
+        <img class="eq-results__image" src="/assets/images/{{pokemon.name}}.png" alt="Picture of {{pokemon.name}}">
 
-      <h5 class="eq-results__label">
-        {{ link-to pokemon.name 'results.pokemon' pokemon.name}}
+        <h5 class="eq-results__label">
+          {{pokemon.name}}
 
-        {{#if (eq winner pokemon.name)}}
-          (That's you!)
-        {{/if}}
-      </h5>
+          {{#if (eq winner pokemon.name)}}
+            (That's you!)
+          {{/if}}
+        </h5>
+      {{/link-to}}
     </li>
   {{/each}}
 </ul>
