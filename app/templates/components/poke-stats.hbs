@@ -1,7 +1,5 @@
-<ul>
-  {{#each stats as |stat|}}
-    <li>
-      {{stat.stat.name}} - {{stat.base_stat}}
-    </li>
-  {{/each}}
-</ul>
+{{#each stats as |stat|}}
+  <div class="eq-stats__bar eq-stats__bar--{{name}}" style="width: {{stat.bar_width}}">
+    {{titleize stat.stat.name}}
+  </div>
+{{/each}}

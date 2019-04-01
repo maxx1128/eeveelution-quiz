@@ -27,40 +27,21 @@
   }
 }
 
-.eq-profile__stats,
 .eq-profile__entries {
   @include larger-than(md) {
     grid-column: 1 / -1;
   }
 }
 
-// .eq-profile__title {
-//   grid-column: 1 / -1;
-
-//   @include larger-than(md) {
-//     grid-column: 1 / span 1;
-//   }
-// }
-
-// .eq-profile__description {
-//   grid-column: 1 / -1;
-
-//   @include larger-than(md) {
-//     grid-column: 1 / span 1;
-//     grid-row-start: 2;
-//   }
-// }
-
-// .eq-profile__basic-info {
-//   grid-column: 1 / -1;
-
-//   @include larger-than(md) {
-//     grid-column: 2 / -1;
-//     grid-row: 1 / span 2;
-//   }
-// }
-
 .eq-profile__image {
-  margin: 0 auto;
+  margin: 0 auto spacing(oneHalf);
   max-width: 300px;
+}
+
+.eq-profile__meta {
+  display: flex;
+  padding: spacing(half) spacing();
+
+  align-items: center;
+  justify-content: space-between;
 }

@@ -37,5 +37,19 @@ $color-map: (
     lighter: #F1F5F8,
     lightest: #F8FAFC,
     white: #FFFFFF
+  ),
+
+  pokemon: (
+    eevee: #a4624a,
+    vaporeon: #5ac5e6,
+    jolteon: #ffde52,
+    flareon: #d54152,
+    espeon: #e6a4d5,
+    umbreon: #b49429,
+    leafeon: #319c73,
+    glaceon: #94e6ee,
+    sylveon: #f492a5
   )
 );
+
+$poke-colors: map-get($color-map, pokemon);

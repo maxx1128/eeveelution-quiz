@@ -1,0 +1,20 @@
+.eq-sprites {
+  display: flex;
+  padding: 0 0 spacing();
+  margin-bottom: spacing(half);
+  justify-content: center;
+
+  border-width: 0px;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-color: color(primary, dark);
+  border-style: solid;
+
+  list-style: none;
+}
+
+.eq-sprites__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

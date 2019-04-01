@@ -1,11 +1,14 @@
-{{#each reversedEntries as |entry|}}
-  <ul data-test="APIData">
-    <li>
-      {{ entry.version.name }}
-    </li>
-    <li>
+<h3>
+  Pokedex Entries
+</h3>
+
+{{#each filteredEntries as |entry|}}
+  <div class="eq-entry eq-entry--{{name}}" data-test="APIData">
+    <p class="eq-entry__title">
+      {{titleize entry.version.name}}
+    </p>
+    <p class="eq-entry__descr">
       {{entry.flavor_text}}
-    </li>
-  </ul>
-  <br><br>
+    </p>
+  </div>
 {{/each}}

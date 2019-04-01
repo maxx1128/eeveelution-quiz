@@ -2,7 +2,7 @@
     <div class="eq-profile__results">
         <div class="eq-profile__title">
             <h1>
-                {{custom.name}}
+                {{titleize custom.name}}
             </h1>
         </div>
 
@@ -10,6 +10,10 @@
             <p>
                 {{custom.description}}
             </p>
+
+            {{poke-stats
+                name=custom.name
+                rawStats=baseData.stats}}
         </article>
     </div>
 
@@ -23,24 +27,23 @@
                 name=custom.name}}
         </div>
 
-        <div class="eq-profile__types">
+        <div class="eq-profile__meta">
             {{poke-types
+                name=custom.name
                 rawTypes=baseData.types}}
-        </div>
 
-        <div class="eq-profile__abilities">
             {{poke-abilities
                 rawAbilities=baseData.abilities}}
         </div>
     </div>
 
     <div class="eq-profile__stats">
-        {{poke-stats
-            rawStats=baseData.stats}}
+
     </div>
 
     <div class="eq-profile__entries">
         {{poke-entries
+            name=custom.name
             rawEntries=speciesData.flavor_text_entries}}
     </div>
 </div>
