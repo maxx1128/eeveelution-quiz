@@ -1,7 +1,7 @@
-<ul>
+<ul class="eq-types">
   {{#each rawTypes as |type|}}
-    <li>
-      {{type.type.name}}
+    <li class="eq-types__item eq-types__item--{{name}}">
+      {{titleize type.type.name}}
     </li>
   {{/each}}
 </ul>
