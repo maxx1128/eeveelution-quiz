@@ -1,0 +1,33 @@
+.eq-entry {
+  display: flex;
+  padding-bottom: spacing(third);
+  margin-bottom: spacing();
+  align-items: flex-end;
+
+  border-bottom: 3px solid black;
+}
+
+.eq-entry__title,
+.eq-entry__descr {
+  margin: 0;
+}
+
+.eq-entry__title {
+  padding-right: spacing();
+  margin-top: spacing(oneHalf);
+  flex: 0 0 33%;
+
+  font-size: type(font-size, h5);
+  font-weight: type(font-weight, bold);
+
+  @include larger-than(md) {
+    padding-right: spacing(half);
+    flex-basis: 160px;
+  }
+}
+
+@each $name, $color in $poke-colors {
+  .eq-entry--#{$name} {
+    border-color: $color;
+  }
+}
