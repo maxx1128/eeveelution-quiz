@@ -8,150 +8,225 @@ const ENTRIES_STUB = [
     "language": {
       "name": "en",
       "url": "https://pokeapi.co/api/v2/language/9/"
+    },
+    "version": {
+      "name": "name here"
     }
   },
   {
     "language": {
       "name": "en",
       "url": "https://pokeapi.co/api/v2/language/9/"
+    },
+    "version": {
+      "name": "name here"
     }
   },
   {
     "language": {
       "name": "en",
       "url": "https://pokeapi.co/api/v2/language/9/"
+    },
+    "version": {
+      "name": "name here"
     }
   },
   {
     "language": {
       "name": "en",
       "url": "https://pokeapi.co/api/v2/language/9/"
+    },
+    "version": {
+      "name": "name here"
     }
   },
   {
     "language": {
       "name": "en",
       "url": "https://pokeapi.co/api/v2/language/9/"
+    },
+    "version": {
+      "name": "name here"
     }
   },
   {
     "language": {
       "name": "en",
       "url": "https://pokeapi.co/api/v2/language/9/"
+    },
+    "version": {
+      "name": "name here"
     }
   },
   {
     "language": {
       "name": "en",
       "url": "https://pokeapi.co/api/v2/language/9/"
+    },
+    "version": {
+      "name": "name here"
     }
   },
   {
     "language": {
       "name": "en",
       "url": "https://pokeapi.co/api/v2/language/9/"
+    },
+    "version": {
+      "name": "name here"
     }
   },
   {
     "language": {
       "name": "en",
       "url": "https://pokeapi.co/api/v2/language/9/"
+    },
+    "version": {
+      "name": "name here"
     }
   },
   {
     "language": {
       "name": "en",
       "url": "https://pokeapi.co/api/v2/language/9/"
+    },
+    "version": {
+      "name": "name here"
     }
   },
   {
     "language": {
       "name": "en",
       "url": "https://pokeapi.co/api/v2/language/9/"
+    },
+    "version": {
+      "name": "name here"
     }
   },
   {
     "language": {
       "name": "en",
       "url": "https://pokeapi.co/api/v2/language/9/"
+    },
+    "version": {
+      "name": "name here"
     }
   },
   {
     "language": {
       "name": "en",
       "url": "https://pokeapi.co/api/v2/language/9/"
+    },
+    "version": {
+      "name": "name here"
     }
   },
   {
     "language": {
       "name": "en",
       "url": "https://pokeapi.co/api/v2/language/9/"
+    },
+    "version": {
+      "name": "name here"
     }
   },
   {
     "language": {
       "name": "en",
       "url": "https://pokeapi.co/api/v2/language/9/"
+    },
+    "version": {
+      "name": "name here"
     }
   },
   {
     "language": {
       "name": "en",
       "url": "https://pokeapi.co/api/v2/language/9/"
+    },
+    "version": {
+      "name": "name here"
     }
   },
   {
     "language": {
       "name": "en",
       "url": "https://pokeapi.co/api/v2/language/9/"
+    },
+    "version": {
+      "name": "name here"
     }
   },
   {
     "language": {
       "name": "en",
       "url": "https://pokeapi.co/api/v2/language/9/"
+    },
+    "version": {
+      "name": "name here"
     }
   },
   {
     "language": {
       "name": "en",
       "url": "https://pokeapi.co/api/v2/language/9/"
+    },
+    "version": {
+      "name": "name here"
     }
   },
   {
     "language": {
       "name": "en",
       "url": "https://pokeapi.co/api/v2/language/9/"
+    },
+    "version": {
+      "name": "name here"
     }
   },
   {
     "language": {
       "name": "en",
       "url": "https://pokeapi.co/api/v2/language/9/"
+    },
+    "version": {
+      "name": "name here"
     }
   },
   {
     "language": {
       "name": "en",
       "url": "https://pokeapi.co/api/v2/language/9/"
+    },
+    "version": {
+      "name": "name here"
     }
   },
   {
     "language": {
       "name": "en",
       "url": "https://pokeapi.co/api/v2/language/9/"
+    },
+    "version": {
+      "name": "name here"
     }
   },
   {
     "language": {
       "name": "en",
       "url": "https://pokeapi.co/api/v2/language/9/"
+    },
+    "version": {
+      "name": "name here"
     }
   },
   {
     "language": {
       "name": "en",
       "url": "https://pokeapi.co/api/v2/language/9/"
+    },
+    "version": {
+      "name": "name here"
     }
   }
 ]
