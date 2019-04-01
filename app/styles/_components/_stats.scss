@@ -1,0 +1,27 @@
+.eq-stats {
+  margin-top: spacing();
+
+  @include smaller-than(md) {
+    display: none;
+  }
+}
+
+.eq-stats__bar {
+  padding: spacing(third);
+  margin-bottom: 2px;
+  max-width: 225px;
+
+  font-size: type(font-size, tiny);
+
+  box-shadow: container(box-shadow, 1);
+
+  @include larger-than(sm) {
+    max-width: 100%;
+  }
+}
+
+@each $name, $color in $poke-colors {
+  .eq-stats__bar--#{$name} {
+    @include contra-color($color);
+  }
+}
