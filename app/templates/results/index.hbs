@@ -11,7 +11,7 @@
         <h5 class="eq-results__label">
           {{pokemon.name}}
 
-          {{#if (eq winner pokemon.name)}}
+          {{#if (and showWinner (eq winner pokemon.name))}}
             (That's you!)
           {{/if}}
         </h5>
