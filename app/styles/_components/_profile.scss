@@ -27,7 +27,6 @@
   }
 }
 
-.eq-profile__stats,
 .eq-profile__entries {
   @include larger-than(md) {
     grid-column: 1 / -1;
@@ -37,4 +36,12 @@
 .eq-profile__image {
   margin: 0 auto spacing(oneHalf);
   max-width: 300px;
+}
+
+.eq-profile__meta {
+  display: flex;
+  padding: spacing(half) spacing();
+
+  align-items: center;
+  justify-content: space-between;
 }
