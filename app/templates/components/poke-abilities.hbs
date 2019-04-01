@@ -1,7 +1,7 @@
-<ul>
+<ul class="eq-abilities">
   {{#each abilities as |ability|}}
     <li>
-      {{ability.name}} {{#if ability.hidden}} (hidden){{/if}}
+      {{titleize ability.name}} {{#if ability.hidden}} (hidden){{/if}}
     </li>
   {{/each}}
 </ul>
