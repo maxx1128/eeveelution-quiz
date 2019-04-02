@@ -1,7 +1,9 @@
 .eq-footer {
   padding: spacing();
 
-  color: color(mono, lighter);
-
   background-color: color(primary, darker);
+
+  a {
+    color: color(mono, lighter);
+  }
 }
