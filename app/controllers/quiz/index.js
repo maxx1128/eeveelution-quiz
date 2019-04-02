@@ -7,7 +7,11 @@ export default Controller.extend({
   quiz: service(),
   question: reads('quiz.current_question'),
 
-  intro_text: computed('question', function(){
-    return (this.get('question') > 1) ? 'Resume Quiz' : 'Start Quiz';
+  started_quiz: computed('question', function() {
+    return this.get('question') > 1;
+  }),
+
+  intro_text: computed('started_quiz', function(){
+    return this.get('started_quiz') ? 'Resume Quiz' : 'Start Quiz';
   })
 });

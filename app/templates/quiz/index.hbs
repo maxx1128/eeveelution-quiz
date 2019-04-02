@@ -1,7 +1,15 @@
-<h1>
-  Wanna take the quiz?
-</h1>
+<div class="eq-quiz-start">
+  <h1>
+    Let's {{if started_quiz 'Resume' 'Start'}} the Quiz!
+  </h1>
 
-<p data-test="GoToQuiz">
-  {{link-to intro_text 'quiz.question' question}}
-</p>
+  {{#if started_quiz}}
+    <p>
+      Looks like you didn't finish the quiz last time. Don't worry, you can pick up where you left off!
+    </p>
+  {{/if}}
+
+  <p data-test="GoToQuiz">
+    {{link-to intro_text 'quiz.question' question}}
+  </p>
+</div>
