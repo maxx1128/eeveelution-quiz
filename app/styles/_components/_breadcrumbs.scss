@@ -11,6 +11,10 @@
   padding: spacing(half);
 }
 
+.eq-breadcrumbs__item--bold {
+  font-weight: type(font-weight, bold);
+}
+
 .eq-breadcrumbs__item--incomplete {
   opacity: 0.3;
 }

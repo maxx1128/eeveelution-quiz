@@ -7,7 +7,7 @@
   {{#each all_questions as |question|}}
     {{#if question.available}}
       <li class="eq-breadcrumbs__item" data-test="QuestionItem-Active">
-        {{link-to question.index 'quiz.question' question.index activeClass="font-bold"}}
+        {{link-to question.index 'quiz.question' question.index activeClass="eq-breadcrumbs__item--bold"}}
       </li>
     {{else}}
       <li class="eq-breadcrumbs__item eq-breadcrumbs__item--incomplete" data-test="QuestionItem">
