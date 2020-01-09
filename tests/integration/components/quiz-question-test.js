@@ -24,7 +24,7 @@ const questionData = {
 module('Integration | Component | quiz-question', function(hooks) {
   setupRenderingTest(hooks);
 
-  test('it render the proper data', async function(assert) {
+  test('it renders the proper data', async function(assert) {
     this.set('question', questionData);
     this.set('externalAction', () => {});
 
@@ -35,7 +35,7 @@ module('Integration | Component | quiz-question', function(hooks) {
       }}
     `);
 
-    assert.dom('[data-test="QuestionItem"]').hasText(questionData.text, 'The question text is rendered right');
+    assert.dom('[data-test="QuestionItemHeader"]').hasText(questionData.text, 'The question text is rendered right');
     assert.dom('li').exists({ count: questionData.answers.length }, 'The correct number of questions exists');
   });
 
