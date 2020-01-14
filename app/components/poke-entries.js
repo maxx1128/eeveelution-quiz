@@ -21,7 +21,7 @@ export default Component.extend({
   }),
 
   filteredEntries: computed('englishEntries', function() {
-    const reversedArray = this.get('englishEntries').reverse();
+    const reversedArray = this.englishEntries.reverse();
 
     return getUnique(reversedArray, 'flavor_text');
   })

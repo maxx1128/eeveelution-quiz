@@ -6,7 +6,7 @@ export default Component.extend({
   attributeBindings: ['ariaLabel:aria-label'],
 
   ariaLabel: computed('progress', function() {
-    return `You are ${this.get('progress')} percent through the quiz`;
+    return `You are ${this.progress} percent through the quiz`;
   }),
 
   runningGIFPath: computed('progress', function() {

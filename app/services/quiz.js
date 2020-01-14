@@ -10,7 +10,7 @@ export default Service.extend({
   init(){
     this._super(...arguments);
 
-    let cookies = this.get('cookies');
+    let cookies = this.cookies;
 
     this.answers = {};
 
@@ -21,23 +21,23 @@ export default Service.extend({
   current_question: 1,
 
   length: computed('questions_data', function(){
-    return parseInt(this.get('questions_data').length);
+    return parseInt(this.questions_data.length);
   }),
 
   progress: computed('current_question', 'length', function() {
-    return this.get('current_question') / this.get('length');
+    return this.current_question / this.length;
   }),
 
   completed: computed('current_question', 'questions_data', function(){
-    return (this.get('current_question') === this.get('questions_data').length);
+    return (this.current_question === this.questions_data.length);
   }),
 
   all_questions: computed('length', function(){
-    const limit = this.get('length');
+    const limit = this.length;
     let questions_array = [];
 
     for (var i = 1; i < limit; i++) {
-      const available = (i <= this.get('current_question'));
+      const available = (i <= this.current_question);
 
       const data = {
         index: i,
@@ -51,7 +51,7 @@ export default Service.extend({
   }),
 
   results: computed('answers', function(){
-    const answers = this.get('answers');
+    const answers = this.answers;
     let results = {};
 
     for (var key in answers) {
@@ -64,7 +64,7 @@ export default Service.extend({
   }),
 
   winner: computed('results', function(){
-    const results = this.get('results');
+    const results = this.results;
     let winner = {
       'name': '',
       'count': 0
@@ -82,9 +82,9 @@ export default Service.extend({
 
   selectAnswer: function(index, answer) {
     const i = parseInt(index),
-          question = this.get('questions_data').objectAt(i),
-          answers = this.get('answers');
-    let current_question = parseInt(this.get('current_question'));
+          question = this.questions_data.objectAt(i),
+          answers = this.answers;
+    let current_question = parseInt(this.current_question);
 
     set(question, 'answer', answer);
     set(answers, i, answer);

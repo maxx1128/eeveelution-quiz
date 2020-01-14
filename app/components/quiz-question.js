@@ -4,6 +4,6 @@ import shuffle from '../helpers/shuffle';
 
 export default Component.extend({
   shuffledAnswers: computed('question.answers', function(){
-    return shuffle(this.get('question.answers'));
+    return shuffle(this.question.answers);
   })
 });

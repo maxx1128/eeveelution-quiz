@@ -6,10 +6,10 @@ export default Route.extend({
 
   model: function(params) {
     this.set('i', parseInt(params.question));
-    const i = this.get('i'),
-          current_question = this.get('quiz.current_question'),
-          quiz_completed = this.get('quiz.completed'),
-          nonexistent_question = (i > (this.get('quiz.questions_data').length - 1)),
+    const i = this.i,
+          current_question = this.quiz.current_question,
+          quiz_completed = this.quiz.completed,
+          nonexistent_question = (i > (this.quiz.questions_data.length - 1)),
           unanswered_question = (i > current_question );
 
     if (nonexistent_question) {
@@ -17,14 +17,14 @@ export default Route.extend({
     } else if (unanswered_question) {
       this.transitionTo('quiz.question', current_question);
     } else if (quiz_completed) {
-      this.transitionTo('results.pokemon', this.get('quiz.winner'));
+      this.transitionTo('results.pokemon', this.quiz.winner);
     } else {
-      return this.get('quiz.questions_data')[i];
+      return this.quiz.questions_data[i];
     }
   },
 
   setupController(controller) {
     this._super(...arguments);
-    controller.set('model.index', this.get('i'));
+    controller.set('model.index', this.i);
   }
 });

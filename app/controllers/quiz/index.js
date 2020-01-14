@@ -8,10 +8,10 @@ export default Controller.extend({
   question: reads('quiz.current_question'),
 
   started_quiz: computed('question', function() {
-    return this.get('question') > 1;
+    return this.question > 1;
   }),
 
   intro_text: computed('started_quiz', function(){
-    return this.get('started_quiz') ? 'Resume Quiz' : 'Start Quiz';
+    return this.started_quiz ? 'Resume Quiz' : 'Start Quiz';
   })
 });
