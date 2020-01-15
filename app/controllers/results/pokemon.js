@@ -13,6 +13,6 @@ export default Controller.extend({
   }),
 
   dexEntries: computed('reversedFlavorTexts', function() {
-    return this.get('reversedFlavorTexts').reverse();
+    return this.reversedFlavorTexts.reverse();
   })
 });

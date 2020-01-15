@@ -5,6 +5,6 @@ export default Route.extend({
   quiz: service(),
 
   model: function() {
-    if (this.get('quiz.completed')) { this.transitionTo('results.pokemon', this.get('quiz.winner')); }
+    if (this.quiz.completed) { this.transitionTo('results.pokemon', this.quiz.winner); }
   }
 });

@@ -10,21 +10,21 @@ export default Controller.extend({
   all_questions: reads('quiz.all_questions'),
 
   progress: computed('quiz.progress', function() {
-    return Math.ceil(this.get('quiz.progress') * 100);
+    return Math.ceil(this.quiz.progress * 100);
   }),
 
   actions: {
     selectAnswer(index, answer) {
       const i = parseInt(index);
 
-      this.get('quiz').selectAnswer(i, answer);
+      this.quiz.selectAnswer(i, answer);
 
-      if (this.get('quiz.completed')) {
-        let cookies = this.get('cookies');
-        cookies.write('winner', this.get('quiz.winner'));
-        cookies.write('completed', this.get('quiz.completed'));
+      if (this.quiz.completed) {
+        let cookies = this.cookies;
+        cookies.write('winner', this.quiz.winner);
+        cookies.write('completed', this.quiz.completed);
 
-        this.transitionToRoute('results.pokemon', this.get('quiz.winner'));
+        this.transitionToRoute('results.pokemon', this.quiz.winner);
       } else {
         this.transitionToRoute('quiz.question', (i + 1));
       }

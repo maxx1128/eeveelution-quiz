@@ -7,7 +7,7 @@ export default Route.extend({
 
   model: function(params) {
     const pokemon_in_url = params.pokemon,
-          possible_pokemon = this.get('quiz.answers_data');
+          possible_pokemon = this.quiz.answers_data;
     let results = false;
     let APIRequest;
 
